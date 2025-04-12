@@ -1,4 +1,5 @@
 import discord
+import os
 from discord.ext import commands
 
 intents = discord.Intents.default()
@@ -24,5 +25,5 @@ async def on_member_update(before, after):
             if channel:
                 await channel.send(f"🎉 Welcome {after.mention} to Premium!")
 
-bot.run("no token for u")
+bot.run(os.environ["DISCORD_SECRET"])
 
