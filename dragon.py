@@ -1,5 +1,6 @@
 import discord
 import os
+import webserver
 from discord.ext import commands
 
 intents = discord.Intents.default()
@@ -24,6 +25,8 @@ async def on_member_update(before, after):
             channel = discord.utils.get(after.guild.text_channels, name="premium-welcome")
             if channel:
                 await channel.send(f"🎉 Welcome {after.mention} to Premium!")
+
+webserver.keep_alive()
 
 bot.run(os.environ["DISCORD_SECRET"])
 
