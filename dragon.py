@@ -14,7 +14,7 @@ async def on_ready():
 
 @bot.event
 async def on_member_update(before, after):
-    premium_role_name = "premium"
+    premium_role_name = "🐉| Feng Academy Student"
 
     before_roles = set(before.roles)
     after_roles = set(after.roles)
@@ -22,9 +22,9 @@ async def on_member_update(before, after):
     # Check if the Premium role was added
     for role in after_roles - before_roles:
         if role.name == premium_role_name:
-            channel = discord.utils.get(after.guild.text_channels, name="premium-welcome")
+            channel = discord.utils.get(after.guild.text_channels, name="🙋| member-log")
             if channel:
-                await channel.send(f"🎉 Welcome {after.mention} to Premium!")
+                await channel.send(f"🎉 Welcome {after.mention} to the Feng Academy!")
 
 webserver.keep_alive()
 
