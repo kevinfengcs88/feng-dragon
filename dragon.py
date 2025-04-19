@@ -22,9 +22,9 @@ async def on_member_update(before, after):
     # Check if the Premium role was added
     for role in after_roles - before_roles:
         if role.name == premium_role_name:
-            channel = discord.utils.get(after.guild.text_channels, name="🙋| member-log")
+            channel = discord.utils.get(after.guild.text_channels, name="🙋┃member-log")
             if channel:
-                await channel.send(f"🎉 Welcome {after.mention} to the Feng Academy!")
+                await channel.send(f"🎉 Welcome {after.mention} to Feng Trading Academy Premium!")
 
 webserver.keep_alive()
 
